@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define f(i,a,n) for(int i = a ; i < n ; i++)
+
+int main() {
+     ll t;
+     cin >> t;
+     while(t--){
+         ll n;
+         cin >> n;
+         ll a[n];
+         f(i,0,n){
+             cin >> a[i];
+         }
+         ll x = a[0];
+         sort(a,a+n);
+         f(i,0,n){
+             if(x < a[i]){
+                 x = x + ((a[i] - x+1)>>1);
+             }
+         }
+        cout << x << endl; 
+     }
+    
+}
